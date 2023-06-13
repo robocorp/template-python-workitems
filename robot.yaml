@@ -1,0 +1,28 @@
+tasks:
+  consumer:
+    command:
+      - python
+      - -m
+      - robocorp.tasks
+      - run
+      - tasks.py
+      - -t
+      - consumer
+  producer:
+    command:
+      - python
+      - -m
+      - robocorp.tasks
+      - run
+      - tasks.py
+      - -t
+      - producer
+devTasks: {}
+condaConfigFile: conda.yaml
+ignoreFiles:
+  - .gitignore
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - .

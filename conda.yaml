@@ -1,0 +1,9 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.13
+  - pip=22.1.2
+  - pip:
+      - robocorp-excel==0.4.0
+      - robocorp-tasks==1.0.0
+      - robocorp-workitems==1.0.1
