@@ -2,7 +2,8 @@
 
 This template leverages the new python open-source structure [robo](https://github.com/robocorp/robo), the [libraries](https://github.com/robocorp/robo#libraries) from to same project as well.
 
-The template provides you with the basic structure of a Python project: logging out of the box and controlling your tasks without fiddling with the base Python stuff, and a lot more.
+The template provides you with the basic structure of a Python project: logging out of the box and controlling your tasks without fiddling with the base Python stuff. The environment contains the most used libraries, so you do not have to start thinking about those right away. 
+With `robocorp-workitems`, you can just start creating and consuming workitems for your process steps.
 
 👉 After running the bot, check out the `log.html` under the `output` -folder.
 
@@ -44,4 +45,4 @@ For best experience to test the work items in this example we recommend using [o
 For more information, do not forget to checkout the following:
 * [Robocorp Documentation -site](https://robocorp.com/docs)
 * [Portal for more examples](https://robocorp.com/portal)
-* [robo -repo](github.com/robocorp/robo) as this will developed a lot...
+* [robo repo](https://github.com/robocorp/robo) as this will developed a lot...
