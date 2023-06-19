@@ -26,7 +26,7 @@ def consumer():
         try:
             name = item.payload["Name"]
             address = item.payload["Zip"]
-            product = item.payload["Product"]
+            product = item.payload["Item"]
             print(f"Processing order: {name}, {address}, {product}")
             item.done()
         except KeyError as err:
