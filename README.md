@@ -1,4 +1,4 @@
-# Python based template for producer-consumer model robots using work items
+# Template: Python - Producer-Consumer
 
 This template leverages the new Python open-source framework [robo](https://github.com/robocorp/robo), and [libraries](https://github.com/robocorp/robo#libraries) from the same project.
 
