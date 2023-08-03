@@ -60,7 +60,6 @@ def consumer():
             item.done()
         except KeyError as err:
             ...
-
 ```
 
 The magic happens in this single line added right before the `item.done()` part: `workitems.outputs.create(payload={"Order": f"{name} is complete"})`. This creates a new output for every processed input with an `"Order"` field in the payload data. This is retrieved in the next step (**reporter**) through `item.payload["Order"]`.
