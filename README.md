@@ -4,11 +4,9 @@ This template leverages the new Python open-source framework [robo](https://gith
 
 It provides the basic structure of a Python project: logging out of the box and controlling your tasks without additional boilerplate. The environment contains the most used libraries, so you do not have to start thinking about those right away. With `robocorp-workitems`, you can just start creating and consuming work items for your process steps.
 
-👉 After running the bot, check out the `log.html` under the `output` -folder.
+👉 After running the bot, check out the [*output/log.html*](./output/log.html) file.
 
-This template contains a working robot implementation that has the basic structure where one part produces work items from input and another part that consumes those work items. 
-
-> The [producer-consumer](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem) model is not limited to two steps, it can continue so that the consumer generates further work items for the next step and so on.
+This template contains a working robot implementation that has the basic structure where the first part produces work items from an input and the second one consumes those newly created output work items.
 
 The template tries to keep the amount of functional code at a minimum so you have less to clear out and replace with your own implementation, but some functional logic is needed to have the template working and guiding the key parts.
 
@@ -29,9 +27,57 @@ The robot is split into two tasks, meant to run as separate steps in Control Roo
 
 - Loop through all work items in the queue and access the payloads from the previous step
 
-### Local testing
+## Local testing
 
 For best experience to test the work items in this example we recommend using [our VS Code extensions](https://robocorp.com/docs/developer-tools/visual-studio-code). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
+
+## Extending the template
+
+> The [producer-consumer](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem) model is not limited to two steps, it can continue so that the consumer generates further work items for the next step and so on.
+
+Here's how you can add a third step, let's say a **reporter**, which will collect inputs from the previous one (the **consumer**) and generate a simple report with the previously created data. But first, see below what you need to add extra:
+
+### The `reporter` step code
+
+```python
+@task
+def reporter():
+    """Collect and combine all the consumer outputs into a single report."""
+    complete_orders = sum("complete" in item.payload["Order"] for item in workitems.inputs)
+    print(f"Complete orders: {complete_orders}")
+```
+
+And as you can see, we collect some `"Order"` info from the previously created outputs, but we don't have yet such outputs created in the previous step (the **consumer**), so let's create them:
+
+```python
+@task
+def consumer():
+    """Process all the produced input Work Items from the previous step."""
+    for item in workitems.inputs:
+        try:
+            ...
+            workitems.outputs.create(payload={"Order": f"{name} is complete"})
+            item.done()
+        except KeyError as err:
+            ...
+```
+
+The magic happens in this single line added right before the `item.done()` part: `workitems.outputs.create(payload={"Order": f"{name} is complete"})`. This creates a new output for every processed input with an `"Order"` field in the payload data. This is retrieved in the next step (**reporter**) through `item.payload["Order"]`.
+
+### The `reporter` task entry
+
+All good on the code side, but we need now to make this new task visible and runnable right in our [*robot.yaml*](./robot.yaml) configuration. So add this under `tasks:`:
+
+```yaml
+Reporter:
+    shell: python -m robocorp.tasks run tasks.py -t reporter
+```
+
+Now you're good to go, just run the **consumer** again (so you'll have output items created), then run the newly introduced 3rd step called **reporter**.
+
+![reporter log](./devdata/reporter-log.png)
+
+----
 
 🚀 Now, you can just get to writing.
 
