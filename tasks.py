@@ -1,6 +1,7 @@
-from robocorp.excel import open_workbook
 from robocorp.tasks import task
 from robocorp import workitems
+
+from RPA.Excel.Files import Files as Excel
 
 
 @task
@@ -8,9 +9,12 @@ def producer():
     """Split Excel rows into multiple output Work Items for the next step."""
     for item in workitems.inputs:
         path = item.download_file("orders.xlsx")
-        orders = open_workbook(path).worksheet(0).as_table(header=True)
 
-        for row in orders:
+        excel = Excel()
+        excel.open_workbook(path)
+        rows = excel.read_worksheet_as_table(header=True)
+
+        for row in rows:
             payload = {
                 "Name": row["Name"],
                 "Zip": row["Zip"],
