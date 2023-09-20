@@ -1,5 +1,6 @@
 from robocorp.tasks import task
 from robocorp import workitems
+import os
 
 from RPA.Excel.Files import Files as Excel
 
@@ -8,7 +9,9 @@ from RPA.Excel.Files import Files as Excel
 def producer():
     """Split Excel rows into multiple output Work Items for the next step."""
     for item in workitems.inputs:
-        path = item.download_file("orders.xlsx")
+        output_directory = os.environ.get("ROBOT_ARTIFACTS")
+        name = "orders.xlsx"
+        path = item.get_file(name, os.path.join(output_directory, name))
 
         excel = Excel()
         excel.open_workbook(path)

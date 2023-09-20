@@ -11,9 +11,7 @@ temp/
 .DS_Store
 *.pyc
 *.zip
-*/work-items-out/*
+devdata/work-items-out/
 testrun/*
 .~lock*
 *.pkl
-
-/orders.xlsx

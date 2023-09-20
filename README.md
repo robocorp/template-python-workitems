@@ -75,7 +75,6 @@ Reporter:
 
 Now you're good to go, just run the **consumer** again (so you'll have output items created), then run the newly introduced 3rd step called **reporter**.
 
-![reporter log](./devdata/reporter-log.png)
 
 ----
 
