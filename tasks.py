@@ -1,17 +1,19 @@
-from robocorp.tasks import task
-from robocorp import workitems
 import os
+from pathlib import Path
 
+from robocorp import workitems
+from robocorp.tasks import task
 from RPA.Excel.Files import Files as Excel
 
 
 @task
 def producer():
     """Split Excel rows into multiple output Work Items for the next step."""
+    artifacts = Path(os.environ["ROBOT_ARTIFACTS"])
+    filename = "orders.xlsx"
+
     for item in workitems.inputs:
-        output_directory = os.environ.get("ROBOT_ARTIFACTS")
-        name = "orders.xlsx"
-        path = item.get_file(name, os.path.join(output_directory, name))
+        path = item.get_file(filename, artifacts / filename)
 
         excel = Excel()
         excel.open_workbook(path)
@@ -32,9 +34,12 @@ def consumer():
     for item in workitems.inputs:
         try:
             name = item.payload["Name"]
-            address = item.payload["Zip"]
+            zipcode = item.payload["Zip"]
             product = item.payload["Product"]
-            print(f"Processing order: {name}, {address}, {product}")
+            print(f"Processing order: {name}, {zipcode}, {product}")
+            assert 1000 <= zipcode <= 9999, "Invalid ZIP code"
             item.done()
+        except AssertionError as err:
+            item.fail("BUSINESS", code="INVALID_ORDER", message=str(err))
         except KeyError as err:
-            item.fail(code="MISSING_VALUE", message=str(err))
+            item.fail("APPLICATION", code="MISSING_FIELD", message=str(err))
