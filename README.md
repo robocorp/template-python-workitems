@@ -58,7 +58,7 @@ def consumer():
             ...
             workitems.outputs.create(payload={"Order": f"{name} is complete"})
             item.done()
-        except KeyError as err:
+        except AssertionError as err:
             ...
 ```
 
