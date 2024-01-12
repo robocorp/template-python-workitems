@@ -1,12 +1,10 @@
 # Template: Python - Producer-Consumer
 
-This template leverages the new Python open-source framework [robo](https://github.com/robocorp/robo), and [libraries](https://github.com/robocorp/robo#libraries) from the same project.
-
-It provides the basic structure of a Python project: logging out of the box and controlling your tasks without additional boilerplate. The environment contains the most used libraries, so you do not have to start thinking about those right away. With `robocorp-workitems`, you can just start creating and consuming work items for your process steps.
-
-👉 After running the bot, check out the [*output/log.html*](./output/log.html) file.
+This template leverages the new [Python framework](https://github.com/robocorp/robocorp), the [libraries](https://github.com/robocorp/robocorp/blob/master/docs/README.md#python-libraries) from to same project as well.
 
 This template contains a working robot implementation that has the basic structure where the first part produces work items from an input and the second one consumes those newly created output work items.
+
+![process.png](./docs/process.png)
 
 The template tries to keep the amount of functional code at a minimum so you have less to clear out and replace with your own implementation, but some functional logic is needed to have the template working and guiding the key parts.
 
@@ -29,7 +27,7 @@ The robot is split into two tasks, meant to run as separate steps in Control Roo
 
 ## Local testing
 
-For best experience to test the work items in this example we recommend using [our VS Code extensions](https://robocorp.com/docs/developer-tools/visual-studio-code). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
+For best experience to test the work items in this example we recommend using [Robocorp Code -extensions for VS Code](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
 
 ## Extending the template
 
@@ -78,9 +76,13 @@ Now you're good to go, just run the **consumer** again (so you'll have output it
 
 ----
 
-🚀 Now, you can just get to writing.
+🚀 Now, go get'em
 
-For more information, do not forget to checkout the following:
-* [Robocorp Documentation site](https://robocorp.com/docs)
-* [Portal for more examples](https://robocorp.com/portal)
-* [The robo GitHub repository](https://github.com/robocorp/robo)
+Start writing Python and remember that the AI/LLM's out there are getting really good and creating Python code specifically.
+
+👉 Try out [Robocorp ReMark 💬](https://chat.robocorp.com)
+
+For more information, do not forget to check out the following:
+- [Robocorp Documentation -site](https://robocorp.com/docs)
+- [Portal for more examples](https://robocorp.com/portal)
+- Follow our main [robocorp -repository](https://github.com/robocorp/robocorp) as it is the main location where we developed the libraries and the framework.
