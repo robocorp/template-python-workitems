@@ -8,7 +8,7 @@ This template contains a working robot implementation that has the basic structu
 
 The template tries to keep the amount of functional code at a minimum so you have less to clear out and replace with your own implementation, but some functional logic is needed to have the template working and guiding the key parts.
 
-> We recommended checking out the article "[Using work items](https://robocorp.com/docs/development-guide/control-room/work-items)" before diving in.
+> We recommended checking out the article "[Using work items](https://robocorp.com/docs-robot-framework/development-guide/control-room/work-items)" before diving in.
 
 ## Tasks
 
@@ -21,13 +21,13 @@ The robot is split into two tasks, meant to run as separate steps in Control Roo
 
 ### The second task (the consumer)
 
-> We recommended checking out the article "[Work item exception handling](https://robocorp.com/docs/development-guide/control-room/work-items#work-item-exception-handling)" before diving in.
+> We recommended checking out the article "[Work item exception handling](https://robocorp.com/docs-robot-framework/development-guide/control-room/work-items#work-item-exception-handling)" before diving in.
 
 - Loop through all work items in the queue and access the payloads from the previous step
 
 ## Local testing
 
-For best experience to test the work items in this example we recommend using [Robocorp Code -extensions for VS Code](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
+For best experience to test the work items in this example we recommend using [Robocorp Code -extensions for VS Code](https://robocorp.com/docs/visual-studio-code/extension-features). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
 
 ## Extending the template
 
