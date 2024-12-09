@@ -27,7 +27,7 @@ The robot is split into two tasks, meant to run as separate steps in Control Roo
 
 ## Local testing
 
-For best experience to test the work items in this example we recommend using [Robocorp Code -extensions for VS Code](https://robocorp.com/docs/visual-studio-code/extension-features). With the Robocorp Code extension you can simply run and [select the input work items](https://robocorp.com/docs/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
+For best experience to test the work items in this example we recommend using [Sema4.ai SDK extension for VS Code](https://robocorp.com/docs/visual-studio-code/extension-features). With the Sema4 extension you can simply run and [select the input work items](https://robocorp.com/docs/visual-studio-code/extension-features#using-work-items) to use, create inputs to simulate error cases, and so on.
 
 ## Extending the template
 
