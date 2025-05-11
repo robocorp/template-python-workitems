@@ -1,6 +1,6 @@
 # Template: Python - Producer-Consumer
 
-This template leverages the new [Python framework](https://github.com/robocorp/robocorp), the [libraries](https://github.com/robocorp/robocorp/blob/master/docs/README.md#python-libraries) from to same project as well.
+This template leverages the new [Python framework](https://github.com/robocorp/robocorp)
 
 This template contains a working robot implementation that has the basic structure where the first part produces work items from an input and the second one consumes those newly created output work items.
 
