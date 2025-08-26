@@ -73,7 +73,6 @@ Reporter:
 
 Now you're good to go, just run the **consumer** again (so you'll have output items created), then run the newly introduced 3rd step called **reporter**.
 
-
 ----
 
 🚀 Now, go get'em
@@ -83,6 +82,7 @@ Start writing Python and remember that the AI/LLM's out there are getting really
 👉 Try out [Robocorp ReMark 💬](https://chat.robocorp.com)
 
 For more information, do not forget to check out the following:
+
 - [Robocorp Documentation -site](https://robocorp.com/docs)
 - [Portal for more examples](https://robocorp.com/portal)
 - Follow our main [robocorp -repository](https://github.com/robocorp/robocorp) as it is the main location where we developed the libraries and the framework.
