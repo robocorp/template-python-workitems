@@ -79,8 +79,6 @@ Now you're good to go, just run the **consumer** again (so you'll have output it
 
 Start writing Python and remember that the AI/LLM's out there are getting really good and creating Python code specifically.
 
-👉 Try out [Robocorp ReMark 💬](https://chat.robocorp.com)
-
 For more information, do not forget to check out the following:
 
 - [Robocorp Documentation -site](https://robocorp.com/docs)
